@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: martin.valchev
+      changes:
+        - createTable:
+            tableName: campaign
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+              - column:
+                  name: company_id
+                  type: uuid
+              - column:
+                  name: start_date
+                  type: datetime
+              - column:
+                  name: end_date
+                  type: datetime
+        - addForeignKeyConstraint:
+            baseColumnNames: company_id
+            baseTableName: campaign
+            constraintName: fk_campaign_company
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: company

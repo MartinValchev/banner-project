@@ -16,6 +16,7 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(name="company_name")
     private String name;
     private String notes;
 

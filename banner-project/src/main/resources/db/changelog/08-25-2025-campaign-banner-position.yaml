@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: martin.valchev
+      changes:
+        - createTable:
+            tableName: campaign_banner_position
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+              - column:
+                  name: campaign_id
+                  type: uuid
+              - column:
+                  name: banner_id
+                  type: uuid
+              - column:
+                  name: website_id
+                  type: uuid
+              - column:
+                  name: impressions
+                  type: bigint
+        - addForeignKeyConstraint:
+            baseColumnNames: campaign_id
+            baseTableName: campaign_banner_position
+            constraintName: fk_campaign_banner_position_campaign
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: campaign
+        - addForeignKeyConstraint:
+            baseColumnNames: banner_id
+            baseTableName: campaign_banner_position
+            constraintName: fk_campaign_banner_position_banner
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: banner
+        - addForeignKeyConstraint:
+            baseColumnNames: website_id
+            baseTableName: campaign_banner_position
+            constraintName: fk_campaign_banner_position_website
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: website

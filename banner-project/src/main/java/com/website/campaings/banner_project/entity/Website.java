@@ -15,7 +15,7 @@ public class Website {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String name;
+    private String websiteDomain;
 
     @OneToMany
     private List<Banner> banners;

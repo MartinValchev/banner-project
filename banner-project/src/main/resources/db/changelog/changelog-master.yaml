@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file:  classpath:db/changelog/08-25-2025-banner.yaml
+  - include:
+      file: classpath:db/changelog/08-25-2025-campaign.yaml
+  - include:
+      file: classpath:db/changelog/08-25-2025-campaign-banner-position.yaml
+  - include:
+      file: classpath:db/changelog/08-25-2025-company.yaml
+  - include:
+      file: classpath:db/changelog/08-25-2025-website.yaml

@@ -25,6 +25,6 @@ public class CampaignBannerPosition {
     private Banner banner;
 
     @ManyToOne
-    @JoinColumn(name="website", nullable = false)
+    @JoinColumn(name="website_id", nullable = false)
     private Website website;
 }

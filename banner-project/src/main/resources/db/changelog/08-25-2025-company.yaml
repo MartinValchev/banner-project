@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: martin.valchev
+      changes:
+        - createTable:
+            tableName: company
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+              - column:
+                  name: company_name
+                  type: varchar(30)
+              - column:
+                  name: notes
+                  type: varchar(70)
+              - column:
+                  name: end_date
+                  type: datetime

@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 3
+      id: 5
       author: martin.valchev
       changes:
         - createTable:
@@ -9,6 +9,9 @@ databaseChangeLog:
               - column:
                   name: id
                   type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
               - column:
                   name: campaign_id
                   type: uuid

@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 2
+      id: 3
       author: martin.valchev
       changes:
         - createTable:
@@ -9,20 +9,21 @@ databaseChangeLog:
               - column:
                   name: id
                   type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
               - column:
                   name: company_id
                   type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_campaign_company
+                    references: company(id)
               - column:
                   name: start_date
                   type: datetime
               - column:
                   name: end_date
                   type: datetime
-        - addForeignKeyConstraint:
-            baseColumnNames: company_id
-            baseTableName: campaign
-            constraintName: fk_campaign_company
-            onDelete: CASCADE
-            onUpdate: RESTRICT
-            referencedColumnNames: id
-            referencedTableName: company
+

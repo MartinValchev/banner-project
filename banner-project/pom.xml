@@ -60,6 +60,12 @@
 			<artifactId>liquibase-core</artifactId>
 			<version>4.33.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.lbruun.springboot/preliquibase-spring-boot-starter -->
+		<dependency>
+			<groupId>net.lbruun.springboot</groupId>
+			<artifactId>preliquibase-spring-boot-starter</artifactId>
+			<version>1.6.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>

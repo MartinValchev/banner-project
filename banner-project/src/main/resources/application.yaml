@@ -2,14 +2,17 @@ spring:
   application:
     name: banner-project
   datasource:
-    url: jdbc:postgresql://localhost:5432/testdb
+    url: jdbc:postgresql://localhost:5432/banner_campaign_db
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
   jpa:
     properties:
       hibernate:
+        default-schema: banner_campaign
         show_sql: true
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/changelog-master.yaml
+    default-schema: banner_campaign
+

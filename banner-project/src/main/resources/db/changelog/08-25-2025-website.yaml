@@ -1,14 +1,20 @@
 databaseChangeLog:
   - changeSet:
-      id: 5
+      id: 4
       author: martin.valchev
       changes:
         - createTable:
             tableName: website
+            constraints:
+              primaryKey: true
+              nullable: false
             columns:
               - column:
                   name: id
                   type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
               - column:
                   name: website_domain
                   type: varchar(70)

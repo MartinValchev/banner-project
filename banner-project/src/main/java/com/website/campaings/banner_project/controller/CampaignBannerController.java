@@ -1,9 +1,6 @@
 package com.website.campaings.banner_project.controller;
 
-import com.website.campaings.banner_project.entity.Banner;
-import com.website.campaings.banner_project.entity.Campaign;
-import com.website.campaings.banner_project.entity.CampaignBannerPosition;
-import com.website.campaings.banner_project.entity.Website;
+import com.website.campaings.banner_project.entity.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,12 +15,43 @@ public class CampaignBannerController {
     }
 
     @PostMapping("/addBanner")
-    public Banner addBanner(@RequestBody() Banner banner) {
+    public Banner addBanner(@RequestBody Banner banner) {
+        //TODO: implement
+        return null;
+    }
+
+// company related
+
+    @PostMapping("/company")
+    public Company addCompany(@RequestBody Company company) {
+        //TODO: implement
+        return null;
+    }
+
+    @GetMapping("/companies")
+    public List<Company> getAllCompanies() {
+        //TODO: implement
+        return null;
+    }
+
+    @GetMapping("/companies/{id}")
+    public Company getCompany(@RequestParam("id") Long id) {
         //TODO: implement
         return null;
     }
 
 // Website related endpoints
+    @PostMapping("/website")
+    public Website addWebsite(@RequestBody Website website) {
+        //TODO: implement
+        return null;
+    }
+
+    @PostMapping("/website/position")
+    public WebsitePosition addWebsitePosition(@RequestBody WebsitePosition websitePosition) {
+        //TODO: implement
+        return null;
+    }
 
     @GetMapping("/websites")
     public List<Website> getAllWebsites() {
@@ -37,12 +65,30 @@ public class CampaignBannerController {
         return null;
     }
 
-    @GetMapping("/websites/website-id}")
-    public List<Website> getWebsiteById(@RequestParam("website-id") Long websiteId) {
+    @GetMapping("/websites/{id}")
+    public List<Website> getWebsiteById(@RequestParam("id") Long websiteId) {
         //TODO: implement
         return null;
     }
 // Campaign related endpoints
+    @PostMapping("/campaign")
+    public Campaign addCampaign(@RequestBody Campaign campaign) {
+        //TODO: implement
+        return null;
+    }
+
+    @PostMapping("/campaign")
+    public CampaignBannerPosition addCampaignBannerPosition(@RequestBody CampaignBannerPosition campaignBannerPosition) {
+        //TODO: implement
+        return null;
+    }
+
+    @GetMapping("/campaign/{id}")
+    public Campaign getCampaign(@RequestParam("id") Long campaignId) {
+        //TODO: implement
+        return null;
+    }
+
     @GetMapping("/campaigns")
     public List<Campaign> getAllCampaigns() {
         //TODO: implement
@@ -66,7 +112,5 @@ public class CampaignBannerController {
         //TODO: implement
         return null;
     }
-
-
 
 }

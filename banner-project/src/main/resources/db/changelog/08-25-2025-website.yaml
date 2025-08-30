@@ -16,6 +16,11 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
+                  name: website_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
                   name: website_domain
                   type: varchar(70)
               - column:

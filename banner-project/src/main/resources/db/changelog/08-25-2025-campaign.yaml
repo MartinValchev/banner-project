@@ -12,7 +12,11 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
                     nullable: false
-
+              - column:
+                  name: campaign_id
+                  type: bigint
+                  constraints:
+                    nullable: false
               - column:
                   name: company_id
                   type: uuid
@@ -20,6 +24,9 @@ databaseChangeLog:
                     nullable: false
                     foreignKeyName: fk_campaign_company
                     references: company(id)
+              - column:
+                  name: campaign_name
+                  type: varchar(70)
               - column:
                   name: start_date
                   type: datetime

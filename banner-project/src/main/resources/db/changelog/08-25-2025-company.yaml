@@ -13,11 +13,13 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
+                  name: company_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
                   name: company_name
                   type: varchar(30)
               - column:
                   name: notes
                   type: varchar(70)
-              - column:
-                  name: end_date
-                  type: datetime

@@ -14,6 +14,7 @@ public class Banner {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    private Long bannerId;
     private String name;
     private String size;
 }

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -25,6 +26,9 @@ public class CampaignBannerPosition {
     private Banner banner;
 
     @ManyToOne
-    @JoinColumn(name="website_id", nullable = false)
-    private Website website;
+    @JoinColumn(name = "website_position_id", nullable = false)
+    private WebsitePosition websitePosition;
+
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
 }

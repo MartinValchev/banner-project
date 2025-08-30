@@ -16,8 +16,9 @@ public class Website {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String websiteDomain;
+    private Long websiteId;
 
-    @OneToMany
-    private List<Banner> banners;
+    @OneToMany(mappedBy = "website")
+    private List<WebsitePosition> websitePositions;
     private String description;
 }

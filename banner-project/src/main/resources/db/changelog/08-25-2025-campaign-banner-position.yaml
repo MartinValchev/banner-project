@@ -15,15 +15,23 @@ databaseChangeLog:
               - column:
                   name: campaign_id
                   type: uuid
+                  constraints:
+                    nullable: false
               - column:
                   name: banner_id
                   type: uuid
+                  constraints:
+                    nullable: false
               - column:
-                  name: website_id
+                  name: website_position_id
                   type: uuid
+                  constraints:
+                    nullable: false
               - column:
                   name: impressions
                   type: bigint
+                  constraints:
+                    nullable: false
         - addForeignKeyConstraint:
             baseColumnNames: campaign_id
             baseTableName: campaign_banner_position
@@ -41,10 +49,10 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: banner
         - addForeignKeyConstraint:
-            baseColumnNames: website_id
+            baseColumnNames: website_position_id
             baseTableName: campaign_banner_position
             constraintName: fk_campaign_banner_position_website
             onDelete: CASCADE
             onUpdate: RESTRICT
             referencedColumnNames: id
-            referencedTableName: website
+            referencedTableName: website_position

@@ -17,6 +17,10 @@ public class Campaign {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    private Long campaignId;
+
+    private String campaignName;
+
     @OneToMany(mappedBy = "campaign")
     private List<CampaignBannerPosition> campaignBannerPositions;
 

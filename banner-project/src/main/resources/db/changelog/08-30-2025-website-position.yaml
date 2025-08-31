@@ -23,7 +23,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: expected_positions
+                  name: expected_impressions
                   type: bigint
                   constraints:
                     nullable: false

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("campaign")
 public class CampaignBannerController {
 
     @GetMapping("/all-banners")
@@ -77,14 +78,8 @@ public class CampaignBannerController {
         return null;
     }
 
-    @PostMapping("/campaign")
+    @PostMapping("/campaign-banner-position")
     public CampaignBannerPosition addCampaignBannerPosition(@RequestBody CampaignBannerPosition campaignBannerPosition) {
-        //TODO: implement
-        return null;
-    }
-
-    @GetMapping("/campaign/{id}")
-    public Campaign getCampaign(@RequestParam("id") Long campaignId) {
         //TODO: implement
         return null;
     }

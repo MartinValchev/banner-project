@@ -15,6 +15,10 @@ public class Banner {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private Long bannerId;
+
+    @Column(name = "banner_name")
     private String name;
+
+    @Column(name= "banner_size")
     private String size;
 }

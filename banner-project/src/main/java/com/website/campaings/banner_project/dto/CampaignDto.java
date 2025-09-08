@@ -9,7 +9,7 @@ import java.util.List;
 public class CampaignDto {
     private Long campaignId;
     private String campaignName;
-    private List<CampaignEntry> entryList;
+    private List<CampaignBannerPositionDto> entryList;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 }

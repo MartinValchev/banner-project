@@ -5,7 +5,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class CampaignEntry {
+public class CampaignBannerPositionDto {
     private Long bannerId;
     private String bannerName;
     private Long websiteId;

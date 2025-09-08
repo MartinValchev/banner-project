@@ -1,21 +1,39 @@
 package com.website.campaings.banner_project.service;
 
+import com.website.campaings.banner_project.dto.WebsiteDto;
+import com.website.campaings.banner_project.dto.WebsitePositionDto;
 import com.website.campaings.banner_project.dto.WebsitePositionUsageDto;
 import com.website.campaings.banner_project.dto.WebsiteUsageDto;
 import com.website.campaings.banner_project.entity.CampaignBannerPosition;
+import com.website.campaings.banner_project.entity.Website;
+import com.website.campaings.banner_project.entity.WebsitePosition;
 import com.website.campaings.banner_project.repository.CampaignBannerPositionRepository;
+import com.website.campaings.banner_project.repository.WebsitePositionRepository;
+import com.website.campaings.banner_project.repository.WebsiteRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 @RequiredArgsConstructor
 public class WebsiteService {
 
     private final CampaignBannerPositionRepository campaignBannerPositionRepository;
-    
+    private final WebsitePositionRepository websitePositionRepository;
+    private final WebsiteRepository websiteRepository;
+
+    public Website addWebsite(Website website) {
+        website.setId(UUID.randomUUID());
+        return websiteRepository.save(website);
+    }
+
     public WebsiteUsageDto getWebsiteUsage(Long websiteId, LocalDateTime usageDate) {
         List<CampaignBannerPosition> campaignBannerPositions = campaignBannerPositionRepository.findByWebsiteId(websiteId);
         List<CampaignBannerPosition> usageDatePositions = campaignBannerPositions.stream()
@@ -23,6 +41,28 @@ public class WebsiteService {
                         || cp.getStartDate().isEqual(usageDate)).toList();
         return toWebsiteUsageDto(usageDate, usageDatePositions);
 
+    }
+
+    public WebsiteDto getWebsiteById(Long websiteId) {
+        List<WebsitePosition> byWebsiteId = websitePositionRepository.findByWebsiteId(websiteId);
+        if (CollectionUtils.isEmpty(byWebsiteId)) {
+            return new WebsiteDto();
+        }
+        return toWebsiteDto(byWebsiteId);
+    }
+
+    public List<WebsiteDto> getAllWebsites() {
+        List<WebsitePosition> byWebsiteId = StreamSupport.stream(websitePositionRepository.findAll().spliterator(), false)
+                .collect(Collectors.toList());
+        if (CollectionUtils.isEmpty(byWebsiteId)) {
+            return new ArrayList<>();
+        }
+        return byWebsiteId.stream().map(w -> toWebsiteDto(w.getWebsite().getWebsitePositions())).toList();
+    }
+
+    public WebsitePosition addWebsitePosition(WebsitePosition websitePosition) {
+        websitePosition.setId(UUID.randomUUID());
+        return websitePositionRepository.save(websitePosition);
     }
     
     private WebsiteUsageDto toWebsiteUsageDto(LocalDateTime usageDate, List<CampaignBannerPosition> positionsForWebsite ) {
@@ -41,5 +81,22 @@ public class WebsiteService {
         dto.setExpectedPositionImpressions(campaignBannerPosition.getWebsitePosition().getExpectedImpressions());
         dto.setWebsitePositionId(campaignBannerPosition.getWebsitePosition().getWebsitePositionId());
         return dto;
+    }
+
+    private WebsiteDto toWebsiteDto(List<WebsitePosition> websitePositions) {
+        WebsiteDto dto = new WebsiteDto();
+        dto.setWebsiteId(websitePositions.get(0).getWebsite().getWebsiteId());
+        dto.setDescription(websitePositions.get(0).getWebsite().getDescription());
+        dto.setWebsiteDomain(websitePositions.get(0).getWebsite().getWebsiteDomain());
+        dto.setPositions(websitePositions.stream().map(this::websitePositionDto).toList());
+        return dto;
+    }
+
+    private WebsitePositionDto websitePositionDto(WebsitePosition websitePosition) {
+        WebsitePositionDto dto = new WebsitePositionDto();
+        dto.setPositionName(websitePosition.getPositionName());
+        dto.setExpectedImpressions(websitePosition.getExpectedImpressions());
+        dto.setWebsitePositionId(websitePosition.getWebsitePositionId());
+        return  dto;
     }
 }

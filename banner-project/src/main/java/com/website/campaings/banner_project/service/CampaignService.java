@@ -1,7 +1,7 @@
 package com.website.campaings.banner_project.service;
 
-import com.website.campaings.banner_project.dto.CampaignDto;
 import com.website.campaings.banner_project.dto.CampaignBannerPositionDto;
+import com.website.campaings.banner_project.dto.CampaignDto;
 import com.website.campaings.banner_project.entity.Campaign;
 import com.website.campaings.banner_project.entity.CampaignBannerPosition;
 import com.website.campaings.banner_project.repository.CampaignRepository;
@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +21,11 @@ public class CampaignService {
     private final CampaignRepository campaignRepository;
 
     private final WebsiteRepository websiteRepository;
+
+    public Campaign addCampaign(Campaign campaign) {
+        campaign.setId(UUID.randomUUID());
+        return campaignRepository.save(campaign);
+    }
 
     public List<CampaignDto> getAllCampaigns() {
         return Streams.of(campaignRepository.findAll()).map(this::toCampaignDto).toList();
@@ -70,20 +76,4 @@ public class CampaignService {
         campaignBannerPositionDto.setImpressions(position.getImpressions());
         return campaignBannerPositionDto;
     }
-
-//    private WebsiteDto toWebsiteDto(WebsitePosition websitePosition, Campaign campaign) {
-//        WebsiteDto websiteDto = new WebsiteDto();
-//        websiteDto.setWebsiteId(websitePosition.getWebsite().getWebsiteId());
-//        websiteDto.setWebsiteDomain(websiteDto.getWebsiteDomain());
-//        websiteDto.setId(websitePosition.getWebsite().getWebsiteId());
-//        websiteDto.setDescription(websitePosition.getWebsite().getDescription());
-//        websiteDto.setEntryList();
-//        return websiteDto;
-//    }
-//
-//    private WebsiteEntry toWebsiteEntry(WebsitePosition websitePosition, Campaign campaign) {
-//        WebsiteEntry websiteEntry = new WebsiteEntry();
-//        websiteEntry.setCampaignId(campaign.getCampaignId());
-//        websiteEntry.setImpressions(websitePosition.);
-//    }
 }

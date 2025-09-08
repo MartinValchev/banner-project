@@ -20,7 +20,4 @@ public class Company {
 
     private String companyName;
     private String notes;
-
-    @OneToMany(mappedBy = "company")
-    private List<Campaign> campaigns;
 }

@@ -1,13 +1,8 @@
 package com.website.campaings.banner_project.controller;
 
-import com.website.campaings.banner_project.dto.CampaignBannerPositionDto;
-import com.website.campaings.banner_project.dto.CampaignDto;
-import com.website.campaings.banner_project.dto.WebsitePositionUsageDto;
-import com.website.campaings.banner_project.dto.WebsiteUsageDto;
+import com.website.campaings.banner_project.dto.*;
 import com.website.campaings.banner_project.entity.*;
-import com.website.campaings.banner_project.service.CampaignBannerPositionService;
-import com.website.campaings.banner_project.service.CampaignService;
-import com.website.campaings.banner_project.service.WebsiteService;
+import com.website.campaings.banner_project.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,56 +17,50 @@ public class CampaignBannerController {
     private final CampaignService campaignService;
     private final CampaignBannerPositionService campaignBannerPositionService;
     private final WebsiteService websiteService;
+    private final BannerService bannerService;
+    private final CompanyService companyService;
 
     @GetMapping("/all-banners")
-    public List<Banner> getAllBanners() {
-        //TODO: implement
-        return null;
+    public List<BannerDto> getAllBanners() {
+        return bannerService.getAllBanners();
     }
 
     @PostMapping("/addBanner")
     public Banner addBanner(@RequestBody Banner banner) {
-        //TODO: implement
-        return null;
+       return bannerService.saveBanner(banner);
     }
 
 // company related
 
     @PostMapping("/company")
     public Company addCompany(@RequestBody Company company) {
-        //TODO: implement
-        return null;
+        return companyService.addCompany(company);
     }
 
     @GetMapping("/companies")
-    public List<Company> getAllCompanies() {
-        //TODO: implement
-        return null;
+    public List<CompanyDto> getAllCompanies() {
+        return companyService.getAllCompanies();
     }
 
     @GetMapping("/companies/{id}")
-    public Company getCompany(@PathVariable ("id") Long id) {
-        //TODO: implement
-        return null;
+    public CompanyDto getCompany(@PathVariable ("id") Long id) {
+        return companyService.getCompanyById(id);
     }
 
 // Website related endpoints
     @PostMapping("/website")
     public Website addWebsite(@PathVariable  Website website) {
-        //TODO: implement
-        return null;
+        return websiteService.addWebsite(website);
     }
 
     @PostMapping("/website/position")
     public WebsitePosition addWebsitePosition(@RequestBody WebsitePosition websitePosition) {
-        //TODO: implement
-        return null;
+        return websiteService.addWebsitePosition(websitePosition);
     }
 
     @GetMapping("/websites")
-    public List<Website> getAllWebsites() {
-        //TODO: implement
-        return null;
+    public List<WebsiteDto> getAllWebsites() {
+        return  websiteService.getAllWebsites();
     }
 
     @GetMapping("/websites/{website_id}/usage")
@@ -80,15 +69,13 @@ public class CampaignBannerController {
     }
 
     @GetMapping("/websites/{id}")
-    public List<Website> getWebsiteById(@PathVariable Long websiteId) {
-        //TODO: implement
-        return null;
+    public WebsiteDto getWebsiteById(@PathVariable Long websiteId) {
+        return  websiteService.getWebsiteById(websiteId);
     }
 // Campaign related endpoints
     @PostMapping("/campaign")
     public Campaign addCampaign(@RequestBody Campaign campaign) {
-        //TODO: implement
-        return null;
+       return campaignService.addCampaign(campaign);
     }
 
     @GetMapping("/campaigns/all")
@@ -97,7 +84,7 @@ public class CampaignBannerController {
     }
 
     @GetMapping("/campaigns/companies/{company-id}")
-    public List<CampaignDto> getCampaignsByCompany(@RequestParam Long companyId) {
+    public List<CampaignDto> getCampaignsByCompany(@PathVariable Long companyId) {
        return campaignService.getCompanyCampaigns(companyId);
     }
 
@@ -107,12 +94,12 @@ public class CampaignBannerController {
     }
 
     @GetMapping("/campaigns/{campaign-id}/")
-    public CampaignDto getCampaignById(@RequestParam Long campaignId) {
+    public CampaignDto getCampaignById(@PathVariable Long campaignId) {
         return campaignService.getCampaignById(campaignId);
     }
 
     @GetMapping("/campaigns/websites/{websiteId}")
-    public List<CampaignDto> getCampaignsByWebsiteId(@RequestParam Long websiteId) {
+    public List<CampaignDto> getCampaignsByWebsiteId(@PathVariable Long websiteId) {
         return campaignService.getWebsiteCampaigns(websiteId);
     }
 // Campaign banner position related endpoints
@@ -123,7 +110,7 @@ public class CampaignBannerController {
     }
 
     @GetMapping("/campaign-banner-positions/campaigns/{campaignId}")
-    public List<CampaignBannerPositionDto> getCampaignBannerPositions(@Re Long campaignId) {
+    public List<CampaignBannerPositionDto> getCampaignBannerPositions(@PathVariable Long campaignId) {
         return campaignBannerPositionService.getCampaignBannerPositionsByCampaignId(campaignId);
     }
 

@@ -10,4 +10,5 @@ import java.util.UUID;
 public interface WebsiteRepository extends CrudRepository<Website, UUID> {
 
     Website findByWebsiteId(Long websiteId);
+
 }

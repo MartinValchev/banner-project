@@ -6,9 +6,8 @@ import java.util.List;
 
 @Data
 public class WebsiteDto {
-    private Long id;
     private Long websiteId;
     private String websiteDomain;
     private String description;
-    private List<WebsiteEntry> entryList;
+    private List<WebsitePositionDto> positions;
 }

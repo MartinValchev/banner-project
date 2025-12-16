@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -44,20 +45,20 @@ public class WebsiteService {
     }
 
     public WebsiteDto getWebsiteById(Long websiteId) {
-        List<WebsitePosition> byWebsiteId = websitePositionRepository.findByWebsiteId(websiteId);
-        if (CollectionUtils.isEmpty(byWebsiteId)) {
+        Website byWebsiteId = websiteRepository.findByWebsiteId(websiteId);
+        if (Objects.isNull(byWebsiteId)) {
             return new WebsiteDto();
         }
         return toWebsiteDto(byWebsiteId);
     }
 
     public List<WebsiteDto> getAllWebsites() {
-        List<WebsitePosition> byWebsiteId = StreamSupport.stream(websitePositionRepository.findAll().spliterator(), false)
+        List<Website> byWebsiteId = StreamSupport.stream(websiteRepository.findAll().spliterator(), false)
                 .collect(Collectors.toList());
         if (CollectionUtils.isEmpty(byWebsiteId)) {
             return new ArrayList<>();
         }
-        return byWebsiteId.stream().map(w -> toWebsiteDto(w.getWebsite().getWebsitePositions())).toList();
+        return byWebsiteId.stream().map(this::toWebsiteDto).toList();
     }
 
     public WebsitePosition addWebsitePosition(WebsitePosition websitePosition) {
@@ -83,12 +84,11 @@ public class WebsiteService {
         return dto;
     }
 
-    private WebsiteDto toWebsiteDto(List<WebsitePosition> websitePositions) {
+    private WebsiteDto toWebsiteDto(Website website) {
         WebsiteDto dto = new WebsiteDto();
-        dto.setWebsiteId(websitePositions.get(0).getWebsite().getWebsiteId());
-        dto.setDescription(websitePositions.get(0).getWebsite().getDescription());
-        dto.setWebsiteDomain(websitePositions.get(0).getWebsite().getWebsiteDomain());
-        dto.setPositions(websitePositions.stream().map(this::websitePositionDto).toList());
+        dto.setWebsiteId(website.getWebsiteId());
+        dto.setDescription(website.getDescription());
+        dto.setWebsiteDomain(website.getWebsiteDomain());
         return dto;
     }
 

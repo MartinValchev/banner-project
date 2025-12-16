@@ -43,7 +43,7 @@ public class CompanyService {
     private CompanyDto toCompanyDto(Company company) {
         CompanyDto dto = new CompanyDto();
         dto.setCompanyId(company.getCompanyId());
-        dto.setNotes(dto.getNotes());
+        dto.setNotes(company.getNotes());
         dto.setCompanyName(company.getCompanyName());
         return dto;
     }

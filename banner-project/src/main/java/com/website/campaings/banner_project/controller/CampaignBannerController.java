@@ -27,7 +27,7 @@ public class CampaignBannerController {
 
     @PostMapping("/addBanner")
     public Banner addBanner(@RequestBody Banner banner) {
-       return bannerService.saveBanner(banner);
+        return bannerService.saveBanner(banner);
     }
 
 // company related
@@ -43,13 +43,13 @@ public class CampaignBannerController {
     }
 
     @GetMapping("/companies/{id}")
-    public CompanyDto getCompany(@PathVariable ("id") Long id) {
+    public CompanyDto getCompany(@PathVariable("id") Long id) {
         return companyService.getCompanyById(id);
     }
 
-// Website related endpoints
+    // Website related endpoints
     @PostMapping("/website")
-    public Website addWebsite(@PathVariable  Website website) {
+    public Website addWebsite(@PathVariable Website website) {
         return websiteService.addWebsite(website);
     }
 
@@ -60,22 +60,23 @@ public class CampaignBannerController {
 
     @GetMapping("/websites")
     public List<WebsiteDto> getAllWebsites() {
-        return  websiteService.getAllWebsites();
+        return websiteService.getAllWebsites();
     }
 
-    @GetMapping("/websites/{website_id}/usage")
+    @GetMapping("/websites/{websiteId}/usage")
     public WebsiteUsageDto getWebsiteUsage(@PathVariable Long websiteId, @RequestParam String usageDate) {
         return websiteService.getWebsiteUsage(websiteId, LocalDateTime.parse(usageDate));
     }
 
-    @GetMapping("/websites/{id}")
+    @GetMapping("/websites/{websiteId}")
     public WebsiteDto getWebsiteById(@PathVariable Long websiteId) {
-        return  websiteService.getWebsiteById(websiteId);
+        return websiteService.getWebsiteById(websiteId);
     }
-// Campaign related endpoints
+
+    // Campaign related endpoints
     @PostMapping("/campaign")
     public Campaign addCampaign(@RequestBody Campaign campaign) {
-       return campaignService.addCampaign(campaign);
+        return campaignService.addCampaign(campaign);
     }
 
     @GetMapping("/campaigns/all")
@@ -85,7 +86,7 @@ public class CampaignBannerController {
 
     @GetMapping("/campaigns/companies/{company-id}")
     public List<CampaignDto> getCampaignsByCompany(@PathVariable Long companyId) {
-       return campaignService.getCompanyCampaigns(companyId);
+        return campaignService.getCompanyCampaigns(companyId);
     }
 
     @GetMapping("/campaigns/active")

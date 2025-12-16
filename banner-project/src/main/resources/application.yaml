@@ -1,10 +1,17 @@
+display:
+  name: Hello ${project.name}
+project:
+  name: "Banner project"
 spring:
   application:
     name: banner-project
   datasource:
-    url: jdbc:postgresql://localhost:5432/banner_campaign_db
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://localhost:15432/banner_campaign_db
+#    url: jdbc:postgresql://192.168.89.100:5432/banner_campaign_db
+    username: martinv
+    password: Password123@
+    #    username: postgres
+#    password: postgres
     driver-class-name: org.postgresql.Driver
   jpa:
     properties:
@@ -16,3 +23,16 @@ spring:
     change-log: classpath:db/changelog/changelog-master.yaml
     default-schema: banner_campaign
 
+## Logging
+#  logging:
+#    file:
+#      name: /opt/myapp/logs/application.log
+#    level:
+#      root: INFO
+#      com:
+#        website:
+#          campaings:
+#            banner_project: DEBUG
+#    pattern:
+#      console: %d{yyyy-MM-dd HH:mm:ss} - %msg%n
+#      file: %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n

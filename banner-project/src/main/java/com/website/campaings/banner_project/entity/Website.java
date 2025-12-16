@@ -18,8 +18,5 @@ public class Website {
     private UUID id;
     private String websiteDomain;
     private Long websiteId;
-
-    @OneToMany(mappedBy = "website")
-    private List<WebsitePosition> websitePositions;
     private String description;
 }

@@ -30,7 +30,7 @@ public class CampaignBannerController {
         return bannerService.saveBanner(banner);
     }
 
-// company related
+// company related api
 
     @PostMapping("/company")
     public Company addCompany(@RequestBody Company company) {

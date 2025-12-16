@@ -1,6 +1,5 @@
 package com.website.campaings.banner_project.dto;
 
-import jakarta.persistence.Column;
 import lombok.Data;
 
 @Data

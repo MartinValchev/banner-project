@@ -17,6 +17,7 @@ public class WebsitePosition {
 
     private Long websitePositionId;
 
+    //position name
     private String positionName;
 
     private Long expectedImpressions;

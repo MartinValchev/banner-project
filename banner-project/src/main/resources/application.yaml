@@ -6,10 +6,11 @@ spring:
   application:
     name: banner-project
   datasource:
-    url: jdbc:postgresql://localhost:15432/banner_campaign_db
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/banner_campaign_db}
+#    url: jdbc:postgresql://localhost:15432/banner_campaign_db
 #    url: jdbc:postgresql://192.168.89.100:5432/banner_campaign_db
-    username: martinv
-    password: Password123@
+    username: ${SPRING_DATASOURCE_USER:martinv}
+    password: ${SPRING_DATASOURCE_PASSWORD:Password123@}
     #    username: postgres
 #    password: postgres
     driver-class-name: org.postgresql.Driver
@@ -26,7 +27,7 @@ spring:
 ## Logging
 #  logging:
 #    file:
-#      name: /opt/myapp/logs/application.log
+#      name: ${LOG_FILE_PATH:/opt/myapp/logs/application.log}
 #    level:
 #      root: INFO
 #      com:

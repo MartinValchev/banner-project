@@ -2,7 +2,7 @@
 FROM maven:3.9-eclipse-temurin-17-alpine AS build
 
 #copy pom.xml and download depedndencies \
-WORKDIR /app
+WORKDIR ~/app
 COPY banner-project/banner-project/pom.xml .
 RUN mvn dependency:go-offline -B
 

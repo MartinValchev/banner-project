@@ -25,17 +25,5 @@ spring:
     enabled: true
     change-log: classpath:db/changelog/changelog-master.yaml
     default-schema: banner_campaign
-
-## Logging
-#  logging:
-#    file:
-#      name: ${LOG_FILE_PATH:/opt/myapp/logs/application.log}
-#    level:
-#      root: INFO
-#      com:
-#        website:
-#          campaings:
-#            banner_project: DEBUG
-#    pattern:
-#      console: %d{yyyy-MM-dd HH:mm:ss} - %msg%n
-#      file: %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+logging:
+  config: classpath:log4j2.xml

@@ -4,6 +4,8 @@ import com.website.campaings.banner_project.dto.CampaignBannerPositionDto;
 import com.website.campaings.banner_project.entity.CampaignBannerPosition;
 import com.website.campaings.banner_project.repository.CampaignBannerPositionRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +14,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CampaignBannerPositionService {
 
+    private static final Logger logger = LogManager.getLogger(CampaignBannerPositionService.class);
+
     private CampaignBannerPositionRepository repository;
 
     public CampaignBannerPosition addCampaignBannerPosition(CampaignBannerPosition campaignBannerPosition) {
@@ -19,6 +23,7 @@ public class CampaignBannerPositionService {
     }
 
     public List<CampaignBannerPositionDto> getCampaignBannerPositionsByCampaignId(Long campaignId){
+        logger.info("Getting Banner Positions By campaignId: {}", campaignId);
         return repository.findByCampaignId(campaignId).stream().map(this::toCampaignBannerPositionDto).toList();
     }
 

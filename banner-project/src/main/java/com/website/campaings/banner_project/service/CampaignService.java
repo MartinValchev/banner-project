@@ -8,6 +8,8 @@ import com.website.campaings.banner_project.repository.CampaignRepository;
 import com.website.campaings.banner_project.repository.WebsiteRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.stream.Streams;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -18,12 +20,15 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class CampaignService {
 
+    private static final Logger logger = LogManager.getLogger(CampaignService.class);
+
     private final CampaignRepository campaignRepository;
 
     private final WebsiteRepository websiteRepository;
 
     public Campaign addCampaign(Campaign campaign) {
         campaign.setId(UUID.randomUUID());
+        logger.info("Saving campaign with id: {}", campaign.getCampaignId());
         return campaignRepository.save(campaign);
     }
 
@@ -32,18 +37,21 @@ public class CampaignService {
     }
 
     public List<CampaignDto> getCompanyCampaigns(Long companyId) {
+        logger.info("Get campaign with company id: {}", companyId);
         List<Campaign> byCompanyId = campaignRepository.findByCompanyId(companyId);
-        return Streams.of(byCompanyId).map(campaign -> campaign)
+        return Streams.of(byCompanyId)
                 .map(this::toCampaignDto)
                 .toList();
     }
 
     public List<CampaignDto> getWebsiteCampaigns(Long websiteId) {
+        logger.info("Get website campaign by website id: {}", websiteId);
         List<Campaign> byCompanyId = campaignRepository.findByCompanyId(websiteId);
         return Streams.of(byCompanyId).map(this::toCampaignDto).toList();
     }
 
     public CampaignDto getCampaignById(Long campaignId) {
+        logger.info("Get campaign by campaignId: {}", campaignId);
         return toCampaignDto(campaignRepository.findByCampaignId(campaignId));
     }
 

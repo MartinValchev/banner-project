@@ -12,6 +12,8 @@ import com.website.campaings.banner_project.repository.WebsitePositionRepository
 import com.website.campaings.banner_project.repository.WebsiteRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -26,12 +28,15 @@ import java.util.stream.StreamSupport;
 @RequiredArgsConstructor
 public class WebsiteService {
 
+    private static final Logger logger = LogManager.getLogger(WebsiteService.class);
+
     private final CampaignBannerPositionRepository campaignBannerPositionRepository;
     private final WebsitePositionRepository websitePositionRepository;
     private final WebsiteRepository websiteRepository;
 
     public Website addWebsite(Website website) {
         website.setId(UUID.randomUUID());
+        logger.info("Add website with websiteId: {}", website.getWebsiteId());
         return websiteRepository.save(website);
     }
 
@@ -45,6 +50,7 @@ public class WebsiteService {
     }
 
     public WebsiteDto getWebsiteById(Long websiteId) {
+        logger.info("Get website with websiteId: {}", websiteId);
         Website byWebsiteId = websiteRepository.findByWebsiteId(websiteId);
         if (Objects.isNull(byWebsiteId)) {
             return new WebsiteDto();
@@ -63,6 +69,7 @@ public class WebsiteService {
 
     public WebsitePosition addWebsitePosition(WebsitePosition websitePosition) {
         websitePosition.setId(UUID.randomUUID());
+        logger.info("Add website position with websitePositionId: {}", websitePosition.getWebsitePositionId());
         return websitePositionRepository.save(websitePosition);
     }
     

@@ -5,6 +5,8 @@ import com.website.campaings.banner_project.entity.Banner;
 import com.website.campaings.banner_project.repository.BannerRepository;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.stream.Streams;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +17,14 @@ import java.util.UUID;
 
 @Service
 public class BannerService {
+
+    private static final Logger logger = LogManager.getLogger(BannerService.class);
+
     @Autowired
     private BannerRepository bannerRepository;
 
     public Banner saveBanner(Banner banner) {
+        logger.info("Saving banner with bannerId: {}", banner.getBannerId());
         banner.setId(UUID.randomUUID());
         return bannerRepository.save(banner);
     }

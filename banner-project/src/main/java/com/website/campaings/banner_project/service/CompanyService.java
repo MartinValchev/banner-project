@@ -5,6 +5,8 @@ import com.website.campaings.banner_project.entity.Company;
 import com.website.campaings.banner_project.repository.CompanyRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,10 +18,13 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class CompanyService {
 
+    private static final Logger logger = LogManager.getLogger(CompanyService.class);
+
     private final CompanyRepository companyRepository;
 
     public Company addCompany(Company company) {
         company.setId(UUID.randomUUID());
+        logger.info("Add company with company id: {}", company.getCompanyId());
         return companyRepository.save(company);
     }
 
@@ -33,6 +38,7 @@ public class CompanyService {
     }
 
     public CompanyDto getCompanyById(Long companyId) {
+        logger.info("Get company with company id: {}", companyId);
         Company byCompanyId = companyRepository.findByCompanyId(companyId);
         if (Objects.isNull(byCompanyId)) {
             return null;

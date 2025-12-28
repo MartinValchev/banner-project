@@ -27,7 +27,10 @@ object BuildAndDockerize : BuildType({
             name = "Build Docker Image"
             scriptContent = """
                 docker build -t banner-project:latest .
-                docker tag banner-project:latest banner-project:%build.number%
+                docker tag banner-project:latest 14789/banner-project:latest
+                docker tag banner-project:latest 14789/banner-project:%build.number%
+                echo "Tagged images:"
+                docker images | grep banner-project
             """.trimIndent()
         }
     }

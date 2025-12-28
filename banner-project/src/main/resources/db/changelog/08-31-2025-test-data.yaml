@@ -1,6 +1,0 @@
-databaseChangeLog:
-  - changeSet:
-      id: 7
-      author: martin.valchev
-  - include:
-      file: classpath:db/changelog/sql/data.sql

@@ -3,11 +3,11 @@ FROM maven:3.9-eclipse-temurin-17-alpine AS build
 
 #copy pom.xml and download depedndencies \
 WORKDIR /app
-COPY banner-project/banner-project/pom.xml .
+COPY banner-project/pom.xml .
 RUN mvn dependency:go-offline -B
 
 # Copy Sources
-COPY banner-project/banner-project/src ./src
+COPY banner-project/src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Create runtime image

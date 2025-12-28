@@ -1,0 +1,165 @@
+2025-12-21 00:10:25.435 [main] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.website.campaings.banner_project.BannerProjectApplicationTests]: BannerProjectApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-12-21 00:10:25.590 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.website.campaings.banner_project.BannerProjectApplication for test class com.website.campaings.banner_project.BannerProjectApplicationTests
+2025-12-21 00:10:26.341 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-12-21 00:10:26.437 [main] INFO  com.website.campaings.banner_project.BannerProjectApplicationTests - Starting BannerProjectApplicationTests using Java 17.0.12 with PID 6540 (started by Marti in D:\courses\spring-boot-in-3-weeks\banner-project\banner-project)
+2025-12-21 00:10:26.445 [main] DEBUG com.website.campaings.banner_project.BannerProjectApplicationTests - Running with Spring Boot v3.5.5, Spring v6.2.10
+2025-12-21 00:10:26.447 [main] INFO  com.website.campaings.banner_project.BannerProjectApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-12-21 00:10:27.694 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-21 00:10:27.842 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 119 ms. Found 6 JPA repository interfaces.
+2025-12-21 00:10:28.793 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-21 00:10:29.140 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@37736bf1
+2025-12-21 00:10:29.144 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-21 00:10:29.251 [main] INFO  net.lbruun.springboot.preliquibase.PreLiquibase - PreLiquibase: Executing SQL script : class path resource [preliquibase/default.sql]
+2025-12-21 00:10:30.012 [main] INFO  liquibase.changelog - Reading from banner_campaign.databasechangelog
+2025-12-21 00:10:30.164 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-12-21 00:10:30.166 [main] INFO  liquibase.changelog - Reading from banner_campaign.databasechangelog
+2025-12-21 00:10:30.175 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-12-21 00:10:30.175 [main] INFO  liquibase.util - Run:                          0
+2025-12-21 00:10:30.176 [main] INFO  liquibase.util - Previously run:               8
+2025-12-21 00:10:30.176 [main] INFO  liquibase.util - Filtered out:                 0
+2025-12-21 00:10:30.176 [main] INFO  liquibase.util - -------------------------------
+2025-12-21 00:10:30.177 [main] INFO  liquibase.util - Total change sets:            8
+2025-12-21 00:10:30.178 [main] INFO  liquibase.util - Update summary generated
+2025-12-21 00:10:30.179 [main] INFO  liquibase.command - Command execution complete
+2025-12-21 00:10:30.834 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-21 00:10:30.913 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-12-21 00:10:30.951 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-21 00:10:31.296 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-21 00:10:31.383 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-21 00:10:32.411 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:10:32.414 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-21 00:10:32.671 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-21 00:10:33.463 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-21 00:10:34.078 [main] INFO  com.website.campaings.banner_project.BannerProjectApplicationTests - Started BannerProjectApplicationTests in 8.171 seconds (process running for 11.227)
+2025-12-21 00:10:34.086 [main] INFO  com.website.campaings.banner_project.controller.LoggingVerifier - === Log4j2 is active! ===
+2025-12-21 00:10:34.086 [main] DEBUG com.website.campaings.banner_project.controller.LoggingVerifier - Debug message
+2025-12-21 00:10:34.086 [main] WARN  com.website.campaings.banner_project.controller.LoggingVerifier - Warning message
+2025-12-21 00:10:34.086 [main] ERROR com.website.campaings.banner_project.controller.LoggingVerifier - Error message
+2025-12-21 00:10:34.446 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-21 00:10:34.448 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-21 00:10:34.454 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-21 00:11:19.307 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-12-21 00:11:19.353 [main] INFO  com.website.campaings.banner_project.BannerProjectApplication - Starting BannerProjectApplication using Java 17.0.12 with PID 17952 (D:\courses\spring-boot-in-3-weeks\banner-project\banner-project\target\classes started by Marti in D:\courses\spring-boot-in-3-weeks\banner-project\banner-project)
+2025-12-21 00:11:19.358 [main] DEBUG com.website.campaings.banner_project.BannerProjectApplication - Running with Spring Boot v3.5.5, Spring v6.2.10
+2025-12-21 00:11:19.361 [main] INFO  com.website.campaings.banner_project.BannerProjectApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-21 00:11:20.182 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-21 00:11:20.264 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71 ms. Found 6 JPA repository interfaces.
+2025-12-21 00:11:21.016 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-21 00:11:21.028 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-21 00:11:21.031 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-21 00:11:21.032 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-12-21 00:11:21.093 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-21 00:11:21.095 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1687 ms
+2025-12-21 00:11:21.395 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-21 00:11:21.565 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@29170a47
+2025-12-21 00:11:21.567 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-21 00:11:21.613 [main] INFO  net.lbruun.springboot.preliquibase.PreLiquibase - PreLiquibase: Executing SQL script : class path resource [preliquibase/default.sql]
+2025-12-21 00:11:22.118 [main] INFO  liquibase.changelog - Reading from banner_campaign.databasechangelog
+2025-12-21 00:11:22.264 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-12-21 00:11:22.267 [main] INFO  liquibase.changelog - Reading from banner_campaign.databasechangelog
+2025-12-21 00:11:22.278 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-12-21 00:11:22.278 [main] INFO  liquibase.util - Run:                          0
+2025-12-21 00:11:22.278 [main] INFO  liquibase.util - Previously run:               8
+2025-12-21 00:11:22.278 [main] INFO  liquibase.util - Filtered out:                 0
+2025-12-21 00:11:22.278 [main] INFO  liquibase.util - -------------------------------
+2025-12-21 00:11:22.278 [main] INFO  liquibase.util - Total change sets:            8
+2025-12-21 00:11:22.279 [main] INFO  liquibase.util - Update summary generated
+2025-12-21 00:11:22.280 [main] INFO  liquibase.command - Command execution complete
+2025-12-21 00:11:22.743 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-21 00:11:22.775 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-12-21 00:11:22.793 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-21 00:11:22.948 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-21 00:11:23.007 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-21 00:11:23.661 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:11:23.663 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-21 00:11:23.860 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-21 00:11:24.422 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-21 00:11:24.964 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-21 00:11:25.002 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-12-21 00:11:25.015 [main] INFO  com.website.campaings.banner_project.BannerProjectApplication - Started BannerProjectApplication in 6.061 seconds (process running for 6.721)
+2025-12-21 00:11:25.023 [main] INFO  com.website.campaings.banner_project.controller.LoggingVerifier - === Log4j2 is active! ===
+2025-12-21 00:11:25.023 [main] DEBUG com.website.campaings.banner_project.controller.LoggingVerifier - Debug message
+2025-12-21 00:11:25.023 [main] WARN  com.website.campaings.banner_project.controller.LoggingVerifier - Warning message
+2025-12-21 00:11:25.023 [main] ERROR com.website.campaings.banner_project.controller.LoggingVerifier - Error message
+2025-12-21 00:11:55.226 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-21 00:11:55.226 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-21 00:11:55.226 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-12-21 00:11:55.308 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.company_id,c1_0.company_name,c1_0.notes from company c1_0
+2025-12-21 00:14:49.529 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-21 00:14:49.574 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-21 00:14:49.576 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-21 00:14:49.578 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-21 00:14:49.579 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-21 00:15:08.882 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-12-21 00:15:08.918 [main] INFO  com.website.campaings.banner_project.BannerProjectApplication - Starting BannerProjectApplication using Java 17.0.12 with PID 11532 (D:\courses\spring-boot-in-3-weeks\banner-project\banner-project\target\classes started by Marti in D:\courses\spring-boot-in-3-weeks\banner-project\banner-project)
+2025-12-21 00:15:08.925 [main] INFO  com.website.campaings.banner_project.BannerProjectApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-21 00:15:09.659 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-21 00:15:09.718 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 6 JPA repository interfaces.
+2025-12-21 00:15:10.383 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-21 00:15:10.413 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-21 00:15:10.416 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-21 00:15:10.416 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-12-21 00:15:10.483 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-21 00:15:10.486 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1521 ms
+2025-12-21 00:15:10.745 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-21 00:15:10.952 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6bf570c
+2025-12-21 00:15:10.954 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-21 00:15:11.000 [main] INFO  net.lbruun.springboot.preliquibase.PreLiquibase - PreLiquibase: Executing SQL script : class path resource [preliquibase/default.sql]
+2025-12-21 00:15:11.657 [main] INFO  liquibase.changelog - Reading from banner_campaign.databasechangelog
+2025-12-21 00:15:11.809 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-12-21 00:15:11.811 [main] INFO  liquibase.changelog - Reading from banner_campaign.databasechangelog
+2025-12-21 00:15:11.823 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-12-21 00:15:11.823 [main] INFO  liquibase.util - Run:                          0
+2025-12-21 00:15:11.823 [main] INFO  liquibase.util - Previously run:               8
+2025-12-21 00:15:11.823 [main] INFO  liquibase.util - Filtered out:                 0
+2025-12-21 00:15:11.823 [main] INFO  liquibase.util - -------------------------------
+2025-12-21 00:15:11.823 [main] INFO  liquibase.util - Total change sets:            8
+2025-12-21 00:15:11.825 [main] INFO  liquibase.util - Update summary generated
+2025-12-21 00:15:11.825 [main] INFO  liquibase.command - Command execution complete
+2025-12-21 00:15:12.339 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-21 00:15:12.376 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-12-21 00:15:12.400 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-21 00:15:12.553 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-21 00:15:12.617 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-21 00:15:13.246 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:15:13.248 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-21 00:15:13.574 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-21 00:15:14.155 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-21 00:15:14.882 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-21 00:15:14.936 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-12-21 00:15:14.949 [main] INFO  com.website.campaings.banner_project.BannerProjectApplication - Started BannerProjectApplication in 6.431 seconds (process running for 7.147)
+2025-12-21 00:15:14.958 [main] INFO  com.website.campaings.banner_project.controller.LoggingVerifier - === Log4j2 is active! ===
+2025-12-21 00:15:14.958 [main] WARN  com.website.campaings.banner_project.controller.LoggingVerifier - Warning message
+2025-12-21 00:15:14.958 [main] ERROR com.website.campaings.banner_project.controller.LoggingVerifier - Error message
+2025-12-21 00:15:20.573 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-21 00:15:20.573 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-21 00:15:20.574 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-21 00:15:20.652 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.company_id,c1_0.company_name,c1_0.notes from company c1_0
+2025-12-21 00:16:21.705 [http-nio-8080-exec-5] INFO  com.website.campaings.banner_project.service.CompanyService - Get company with company id: 25744
+2025-12-21 00:16:21.716 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.company_id,c1_0.company_name,c1_0.notes from company c1_0 where c1_0.company_id=?
+2025-12-21 00:19:44.390 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-21 00:19:44.432 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-21 00:19:44.434 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-21 00:19:44.436 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-21 00:19:44.438 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

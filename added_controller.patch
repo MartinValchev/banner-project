@@ -1,0 +1,56 @@
+Subject: [PATCH] added controller
+---
+Index: banner-project/src/main/java/com/website/campaings/banner_project/controller/CampaignBannerController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/banner-project/src/main/java/com/website/campaings/banner_project/controller/CampaignBannerController.java b/banner-project/src/main/java/com/website/campaings/banner_project/controller/CampaignBannerController.java
+new file mode 100644
+--- /dev/null	(date 1756555781363)
++++ b/banner-project/src/main/java/com/website/campaings/banner_project/controller/CampaignBannerController.java	(date 1756555781363)
+@@ -0,0 +1,44 @@
++package com.website.campaings.banner_project.controller;
++
++import com.website.campaings.banner_project.entity.Banner;
++import com.website.campaings.banner_project.entity.Campaign;
++import com.website.campaings.banner_project.entity.CampaignBannerPosition;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.bind.annotation.RestController;
++
++import java.util.List;
++
++@RestController
++public class CampaignBannerController {
++
++    @GetMapping("/all-banners")
++    public List<Banner> getAllBanners() {
++        //TODO: implement
++        return null;
++    }
++
++    @GetMapping("/all-campaigns")
++    public List<Campaign> getAllCampaigns() {
++        //TODO: implement
++        return null;
++    }
++
++    @GetMapping("/banner-positions/campaign/{campaign-id}")
++    public List<CampaignBannerPosition> getBannerPositionsByCampaign(@RequestParam("campaign-id") String campaignId) {
++        //TODO: implement
++        return null;
++    }
++
++    @GetMapping("/banner-positions/campaign/{campaign-id}")
++    public List<CampaignBannerPosition> getWebsiteBannerPositions(@RequestParam("website-id") String websiteId) {
++        //TODO: implement
++        return null;
++    }
++
++    @GetMapping("/campaigns/company/{company-id}")
++    public List<Campaign> getCampaignsByCompany(@RequestParam("company-id") String companyId) {
++        //TODO: implement
++        return null;
++    }
++}

@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: martin.valchev
+      changes:
+        - createTable:
+            tableName: banner
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: banner_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: banner_name
+                  type: varchar(50)
+              - column:
+                  name: banner_size
+                  type: varchar(20)

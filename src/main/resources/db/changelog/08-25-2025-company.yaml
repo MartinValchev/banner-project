@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: martin.valchev
+      changes:
+        - createTable:
+            tableName: company
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: company_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: company_name
+                  type: varchar(30)
+              - column:
+                  name: notes
+                  type: varchar(70)

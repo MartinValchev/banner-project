@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: martin.valchev
+      changes:
+        - createTable:
+            tableName: website_position
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: position_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: website_position_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: expected_impressions
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: website_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_website_position_website
+                    references: website(id)

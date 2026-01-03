@@ -1,0 +1,37 @@
+services:
+  eureka-server:
+    image: 14789/eureka-server
+    networks:
+      - banner-network
+    ports:
+      - "8761:8761"
+  banner-project:
+    image: 14789/banner-project
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/banner_campaign_db
+      - SPRING_DATASOURCE_USERNAME=martinv
+      - SPRING_DATASOURCE_PASSWORD=Password123@
+    ports:
+      - "8080:8080"
+    networks:
+      - banner-network
+  banner-db:
+    image: 14789/banner-db
+    environment:
+      - POSTGRES_DB=banner_campaign_db
+      - POSTGRES_USER=martinv
+      - POSTGRES_PASSWORD=Password123@
+    networks:
+      - banner-network
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+networks:
+  # The presence of these objects is sufficient to define them
+  banner-network: {}
+volumes:
+  postgres-data:
+    driver: flocker
+    driver_opts:
+      size: "10GiB"

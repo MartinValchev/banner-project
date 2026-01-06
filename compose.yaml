@@ -22,7 +22,7 @@ services:
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/banner_campaign_db
       - SPRING_DATASOURCE_USERNAME=martinv
-      - SPRING_DATASOURCE_PASSWORD=Password123@
+      - "SPRING_DATASOURCE_PASSWORD=${DATASOURCE_PASSWORD}"
     ports:
       - "8080:8080"
     networks:
